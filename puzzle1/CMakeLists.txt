@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.16.3)
+
+project(puzzle1)
+set(Boost_USE_STATIC_LIBS OFF) 
+set(Boost_USE_MULTITHREADED OFF)  
+set(Boost_USE_STATIC_RUNTIME OFF) 
+find_package(Boost) 
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS}) 
+    add_executable (main main.cpp)
+    target_link_libraries(main ${Boost_LIBRARIES})
+endif()
